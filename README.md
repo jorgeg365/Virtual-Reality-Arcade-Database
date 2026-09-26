@@ -25,17 +25,16 @@ The `BOOKING_GAME` junction table resolves the many-to-many relationship between
 ## Repository Contents
 
 - `Virtual_Reality_Arcade.sql` - Database creation script, sample data, and SQL queries
-- `Virtual_Reality_Arcade.mwb` - MySQL Workbench model
-- `diagrams/Virtual_Reality_Arcade_Chen_ER.pdf` - Hand-drawn Chen ER diagram
-- `diagrams/Virtual_Reality_Arcade_UML_EER.pdf` - UML/EER diagram created in MySQL Workbench
-- `report/Project1.docx` - Final project report in Word format
-- `report/Project1.pdf` - Final project report in PDF format
+- `Virtual_Reality_Arcade.mwb` - MySQL Workbench database model
+- `Virtual_Reality_Arcade.pdf` - Hand-drawn Chen ER diagram
+- `Virtual_Reality_Arcade_UML_EER.pdf` - UML/EER diagram created in MySQL Workbench
+- `Project1.docx` - Final project report
 
 ## Database Features
 
-- Primary and foreign keys
+- Primary keys and foreign keys
 - One-to-many, one-to-one, and many-to-many relationships
-- Junction table for BOOKING and GAME
+- `BOOKING_GAME` junction table
 - Indexes and constraints
 - Sample data
 - JOIN queries
