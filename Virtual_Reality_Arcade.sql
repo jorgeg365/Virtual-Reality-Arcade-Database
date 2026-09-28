@@ -88,9 +88,9 @@ CREATE TABLE IF NOT EXISTS `vr_arcade_db`.`BOOKING` (
   `Number_of_Players` INT NOT NULL,
   `Status` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`Booking_ID`),
-  INDEX `FK_Booking_Customer_idx` (`Customer_ID` ASC) VISIBLE,
-  INDEX `FK_Booking_Station_idx` (`Station_ID` ASC) VISIBLE,
-  INDEX `FK_Booking_Employee_idx` (`Employee_ID` ASC) VISIBLE,
+  INDEX `FK_Booking_Customer_idx` (`Customer_ID` ASC) ,
+  INDEX `FK_Booking_Station_idx` (`Station_ID` ASC) ,
+  INDEX `FK_Booking_Employee_idx` (`Employee_ID` ASC) ,
   CONSTRAINT `FK_Booking_Customer`
     FOREIGN KEY (`Customer_ID`)
     REFERENCES `vr_arcade_db`.`CUSTOMER` (`Customer_ID`)
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `vr_arcade_db`.`PAYMENT` (
   `Payment_Date` DATE NOT NULL,
   `Payment_Method` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`Payment_ID`),
-  UNIQUE INDEX `Booking_ID_UNIQUE` (`Booking_ID` ASC) VISIBLE,
+  UNIQUE INDEX `Booking_ID_UNIQUE` (`Booking_ID` ASC) ,
   CONSTRAINT `FK_Payment_Booking`
     FOREIGN KEY (`Booking_ID`)
     REFERENCES `vr_arcade_db`.`BOOKING` (`Booking_ID`)
@@ -139,8 +139,8 @@ CREATE TABLE IF NOT EXISTS `vr_arcade_db`.`MAINTENANCE` (
   `Description` VARCHAR(255) NOT NULL,
   `Status` VARCHAR(30) NOT NULL,
   PRIMARY KEY (`Maintenance_ID`),
-  INDEX `FK_Maintenance_Station_idx` (`Station_ID` ASC) VISIBLE,
-  INDEX `FK_Maintenance_Employee_idx` (`Employee_ID` ASC) VISIBLE,
+  INDEX `FK_Maintenance_Station_idx` (`Station_ID` ASC) ,
+  INDEX `FK_Maintenance_Employee_idx` (`Employee_ID` ASC) ,
   CONSTRAINT `FK_Maintenance_Station`
     FOREIGN KEY (`Station_ID`)
     REFERENCES `vr_arcade_db`.`VR_STATION` (`Station_ID`)
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `vr_arcade_db`.`BOOKING_GAME` (
   `Booking_ID` INT NOT NULL,
   `Game_ID` INT NOT NULL,
   PRIMARY KEY (`Booking_ID`, `Game_ID`),
-  INDEX `FK_BookingGame_Game_idx` (`Game_ID` ASC) VISIBLE,
+  INDEX `FK_BookingGame_Game_idx` (`Game_ID` ASC) ,
   CONSTRAINT `FK_BookingGame_Booking`
     FOREIGN KEY (`Booking_ID`)
     REFERENCES `vr_arcade_db`.`BOOKING` (`Booking_ID`)
